@@ -1,3 +1,23 @@
 from django.db import models
 
-# Create your models here.
+from edc_base.model.models import BaseUuidModel
+from edc_map.model_mixins import MapperDataModelMixin, LandmarkMixin
+
+
+class Landmark(LandmarkMixin, BaseUuidModel):
+
+    class Meta:
+        app_label = 'example_survey'
+
+
+class MapperData(MapperDataModelMixin, BaseUuidModel):
+
+    map_code = models.CharField(
+        max_length=10)
+
+    pair = models.IntegerField()
+
+    intervention = models.BooleanField(default=False)
+
+    class Meta:
+        app_label = 'example_survey'
