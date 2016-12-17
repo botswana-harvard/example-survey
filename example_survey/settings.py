@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django_crypto_fields.apps.AppConfig',
     'django_revision.apps.AppConfig',
     'edc_base.apps.AppConfig',
-    'edc_device.apps.AppConfig',
     'edc_identifier.apps.AppConfig',
     'example_survey.apps.EdcMapAppConfig',
     'edc_subset_manager.apps.AppConfig',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'household.apps.AppConfig',
     'survey.apps.AppConfig',
     'plot.apps.AppConfig',
+    'plot.apps.EdcDeviceAppConfig',
     # 'bcpp_map.apps.AppConfig',
     'example_survey.apps.AppConfig'
 ]

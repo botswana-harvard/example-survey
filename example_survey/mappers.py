@@ -1,8 +1,8 @@
 from edc_map.site_mappers import site_mappers
 
-from .landmarks import TEST_LANDMARKS
-
 from edc_map.mapper import Mapper
+
+from .landmarks import TEST_LANDMARKS
 
 
 class TestPlotMapper(Mapper):
