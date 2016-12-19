@@ -2,6 +2,7 @@ from django.apps import AppConfig as DjangoAppConfig
 from edc_map.apps import AppConfig as EdcMapAppConfigParent
 from edc_device.apps import AppConfig as EdcDeviceAppConfigParent, DevicePermission
 from edc_device.constants import SERVER, CENTRAL_SERVER, CLIENT
+from survey.apps import AppConfig as SurveyAppConfigParent, CurrentSurveys, CurrentSurvey
 
 
 class AppConfig(DjangoAppConfig):
@@ -25,3 +26,10 @@ class EdcDeviceAppConfig(EdcDeviceAppConfigParent):
             create_roles=[SERVER, CENTRAL_SERVER],
             change_roles=[SERVER, CENTRAL_SERVER, CLIENT])
     }
+
+
+class SurveyAppConfig(SurveyAppConfigParent):
+    current_surveys = CurrentSurveys(*[
+        CurrentSurvey('example-survey.example-survey-1.annual.test_community', 0),
+        CurrentSurvey('example-survey.example-survey-2.annual.test_community', 1),
+        CurrentSurvey('example-survey.example-survey-3.annual.test_community', 2)])
