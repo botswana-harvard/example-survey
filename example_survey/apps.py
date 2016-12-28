@@ -1,11 +1,6 @@
-from dateutil.relativedelta import relativedelta
-
 from django.apps import AppConfig as DjangoAppConfig
 
-from edc_base.utils import get_utcnow
 from edc_base_test.apps import AppConfig as EdcBaseTestAppConfigParent
-from edc_consent.apps import AppConfig as EdcConsentAppConfigParent
-from edc_consent.consent_config import ConsentConfig
 from edc_device.apps import AppConfig as EdcDeviceAppConfigParent, DevicePermission
 from edc_device.constants import SERVER, CENTRAL_SERVER, CLIENT
 from edc_map.apps import AppConfig as EdcMapAppConfigParent
@@ -45,17 +40,3 @@ class SurveyAppConfig(SurveyAppConfigParent):
         CurrentSurvey('example-survey.example-survey-1.annual.test_community', 0),
         CurrentSurvey('example-survey.example-survey-2.annual.test_community', 1),
         CurrentSurvey('example-survey.example-survey-3.annual.test_community', 2)])
-
-
-class EdcConsentAppConfig(EdcConsentAppConfigParent):
-    consent_configs = [
-        ConsentConfig(
-            'example_survey.subjectconsent',
-            version='1',
-            start=get_utcnow() - relativedelta(years=1),
-            end=get_utcnow() + relativedelta(years=1),
-            age_min=16,
-            age_is_adult=18,
-            age_max=64,
-            gender=['M', 'F']),
-    ]
