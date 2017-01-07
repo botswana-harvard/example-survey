@@ -4,7 +4,7 @@ from edc_base_test.apps import AppConfig as EdcBaseTestAppConfigParent
 from edc_device.apps import AppConfig as EdcDeviceAppConfigParent, DevicePermission
 from edc_device.constants import SERVER, CENTRAL_SERVER, CLIENT
 from edc_map.apps import AppConfig as EdcMapAppConfigParent
-from survey.apps import AppConfig as SurveyAppConfigParent, CurrentSurveys, CurrentSurvey
+from survey.apps import AppConfig as SurveyAppConfigParent, S
 
 
 class AppConfig(DjangoAppConfig):
@@ -36,7 +36,7 @@ class EdcDeviceAppConfig(EdcDeviceAppConfigParent):
 
 
 class SurveyAppConfig(SurveyAppConfigParent):
-    current_surveys = CurrentSurveys(*[
-        CurrentSurvey('example-survey.example-survey-1.annual.test_community', 0),
-        CurrentSurvey('example-survey.example-survey-2.annual.test_community', 1),
-        CurrentSurvey('example-survey.example-survey-3.annual.test_community', 2)])
+    current_surveys = [
+        S('example-survey.example-survey-1.annual.test_community'),
+        S('example-survey.example-survey-2.annual.test_community'),
+        S('example-survey.example-survey-3.annual.test_community')]
