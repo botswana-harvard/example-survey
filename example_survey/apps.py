@@ -4,7 +4,8 @@ from edc_base_test.apps import AppConfig as EdcBaseTestAppConfigParent
 from edc_device.apps import AppConfig as EdcDeviceAppConfigParent, DevicePermission
 from edc_device.constants import SERVER, CENTRAL_SERVER, CLIENT
 from edc_map.apps import AppConfig as EdcMapAppConfigParent
-from survey.apps import AppConfig as SurveyAppConfigParent, S
+from survey.apps import AppConfig as SurveyAppConfigParent
+from survey.survey import S
 
 
 class AppConfig(DjangoAppConfig):
