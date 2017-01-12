@@ -5,7 +5,7 @@ from edc_device.apps import AppConfig as EdcDeviceAppConfigParent, DevicePermiss
 from edc_device.constants import SERVER, CENTRAL_SERVER, CLIENT
 from edc_map.apps import AppConfig as EdcMapAppConfigParent
 from survey.apps import AppConfig as SurveyAppConfigParent
-from survey.survey import S
+from survey.sparser import S
 
 
 class AppConfig(DjangoAppConfig):
