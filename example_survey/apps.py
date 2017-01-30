@@ -31,7 +31,7 @@ class EdcDeviceAppConfig(EdcDeviceAppConfigParent):
     device_permissions = {
         'plot.plot': DevicePermission(
             model='plot.plot',
-            create_roles=[SERVER, CENTRAL_SERVER],
+            create_roles=[SERVER, CENTRAL_SERVER, CLIENT],
             change_roles=[SERVER, CENTRAL_SERVER, CLIENT])
     }
 
