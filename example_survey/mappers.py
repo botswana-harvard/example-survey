@@ -15,8 +15,10 @@ class TestPlotMapper(Mapper):
 
     landmarks = TEST_LANDMARKS
 
-    center_lat = -25.330451
-    center_lon = 25.556502
+    center_lat = -24.655949
+    center_lon = 25.923439
+    clinic_lat = -24.656037
+    clinic_lon = 25.921765
     radius = 3.5
     location_boundary = ()
 
